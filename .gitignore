@@ -1,0 +1,6 @@
+node_modules
+src/config/env/.env.prod
+src/config/jwt/private.pem
+src/config/jwt/public.pem
+src/config/firestore/key.json
+dist
