@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Addressbook is a simple RESTful API project built using Node.Js, koa, TypeScript and Objection as ORM for a Postres database. As middleware is used JWT, CORS, Pino logger. Swagger API docs yet to be implemented.
+Addressbook is a simple RESTful API project built using Node.Js, Koa, TypeScript and Objection as ORM for a Postres database. As middleware is used JWT, CORS, Pino logger. Swagger API docs yet to be implemented.
 
 ### What it contains
 
@@ -31,29 +31,29 @@ Addressbook is a simple RESTful API project built using Node.Js, koa, TypeScript
 
 ### Setup And Start
 
-install dependencies: npm install
-run in development: npm run dev
-run in staging: launch app in docker on 8080
+* install dependencies: npm install
+* run in development: npm run dev
+* run in staging: launch app in docker on 8080
 
 ### Test
 
-npm run test
+* npm run test
 
 ### Migrations
 
-create a new migration: npm run migration:make
-apply migration into DB in dev environment: npm run db-dev:migrate
-apply migration into DB in test environment: npm run db-test:migrate
+* create a new migration: npm run migration:make
+* apply migration into DB in dev environment: npm run db-dev:migrate
+* apply migration into DB in test environment: npm run db-test:migrate
 
 ### Seeding
 
-create a new seed: npm run seed:make
-apply seed into DB in dev environment: npm run db-dev:seed
-apply seed into DB in test environment: npm run db-test:seed
+* create a new seed: npm run seed:make
+* apply seed into DB in dev environment: npm run db-dev:seed
+* apply seed into DB in test environment: npm run db-test:seed
 
 ### Build
 
-build into /dist: npm run build
+* build into /dist: npm run build
 
 
 ## Design
