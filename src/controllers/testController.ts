@@ -6,7 +6,7 @@ export function test(ctx: IContext){
 
   ctx.body = {
     status: 'success',
-    message: 'Test route works!'
+    message: 'Test route works fine.'
   }
 
 }

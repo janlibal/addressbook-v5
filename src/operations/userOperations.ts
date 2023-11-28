@@ -2,8 +2,10 @@ import userRepository from "../repositories/userRepository"
 import logger from "../utils/logger"
 import * as errors from '../utils/errors'
 import crypto from "../utils/crypto"
+import { IUser } from "../interfaces/IUser"
 
-async function create(input: any) {
+
+async function create(input: IUser) {
     
     logger.info('create user started')
 
@@ -22,7 +24,7 @@ async function create(input: any) {
 
     let createdUser: any
     createdUser = await userRepository.saveUser(data)
-
+       
     createdUser.accessToken = await crypto.generateAccessToken(createdUser.id)
         
     logger.info('create user finished')
@@ -36,14 +38,13 @@ async function create(input: any) {
 }
 
 
-async function login(input: any) {
+async function login(input: IUser) {
 
     logger.info('login started')
 
     const data = {
         email: input.email.toLowerCase(),
         password: input.password
-
     }
             
     const user = await userRepository.findByEmail(data.email)
@@ -73,7 +74,7 @@ async function login(input: any) {
     
 }
 
-async function verifyTokenPayload(token:any) {
+async function verifyTokenPayload(token:string) {
     logger.info({ token }, 'verifyTokenPayload started')
     
     let jwtPayload:any

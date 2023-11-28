@@ -36,7 +36,7 @@ async function generateAccessToken(userId: string) {
     return jwt.sign(payload, config.auth.secret, signOptions)
 }
 
-async function verifyToken(token: any) {
+async function verifyToken(token: string) {
     try {
         //---const data = await jwt.verify(token, publicKey, verifyOptions)
         const data = await jwt.verify(token, config.auth.secret, verifyOptions)

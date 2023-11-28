@@ -1,4 +1,6 @@
 import { IContext } from "../interfaces/IContext"
+import { IUser } from "../interfaces/IUser"
+
 import userOperations from "../operations/userOperations"
 import validate from "../validations"
 import schema from '../validations/schemas/userSchema'
@@ -6,7 +8,7 @@ import schema from '../validations/schemas/userSchema'
 
 export async function signUp(ctx: IContext){
 
-    const input = {
+    const input:IUser = {
         email: ctx.request.body.email,
         name: ctx.request.body.name,
         password: ctx.request.body.password
@@ -15,7 +17,6 @@ export async function signUp(ctx: IContext){
     validate(schema.signUp, input)
 
     const user = await userOperations.create(input)
-
 
     ctx.body = {
         status: 'success',
@@ -27,7 +28,7 @@ export async function signUp(ctx: IContext){
 
 export async function signIn(ctx: IContext){
 
-    const input = {
+    const input: IUser = {
         email: ctx.request.body.email,
         password: ctx.request.body.password
     }
