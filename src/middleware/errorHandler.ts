@@ -6,7 +6,8 @@ async function errorHandler(ctx: IContext, next: () => Promise<any>) {
     try {
         await next()
     } catch (error: any) {
-  /*      ctx.status =  error.status
+        /*      
+        ctx.status =  error.status
         error.status = ctx.status
         ctx.body = { 'Something went wrong right now:': error }
         ctx.app.emit('error:', error, ctx)
@@ -19,7 +20,7 @@ async function errorHandler(ctx: IContext, next: () => Promise<any>) {
         message: error.message
         }*/
         ctx.status = error.status || 500
-        ctx.body = error.message
+        ctx.body = { 'Something went wrong right now:': error.message }
         ctx.app.emit('error', error, ctx)
 
 
